@@ -7,14 +7,14 @@ BitGrinPay is a specification for a simple way to send payments to users. This c
 The BitGrin GUI wallet, Kingfish, implements BitGrinPay to simply orchestrate transaction file exchanges. Put simply, the system:
 
  - Provides an xbg:// link that embeds payer information including their name, logo, and a payout endpoint
- - The recipient uses this data to send an HTTP API request to the payer which includes authentication credentials
+ - The recipient uses this data to send an HTTPS API request to the payer which includes authentication credentials
  - The payer replies with a payment transaction send file
  - The recipient produces a response transaction file automatically, and sends the response back to the payer endpoint
  - The payer can then broadcast the response file, completing the transaction, and send a success/fail bit back to the recipient
 
  ## Motivation
 
- Currently, the simplest way to send and receive BitGrin payments is over HTTP/S, which already orchestrates this process.
+ Currently, the simplest way to send and receive BitGrin payments is over HTTPS, which already orchestrates this process.
  However, HTTP/S transfers require the recipient to expose ports through their router, which may be difficult or even impossible for some users.
 
  Alternatively, a recipient could opt for receiving a transaction file and sending back a response, however this is a slow, manual process to perform over email or other means.
@@ -55,6 +55,8 @@ First, a payer produces a payout payload containing their payer information:
 
  Alternatively, the user can simply paste the base64 encoded string in to wallets that do not register the XBG scheme
 
+---
+
 ### request_payout
 This will be performed by the BitGrinPay client using the `request_payout_url` specified in the `payment_payload`
 
@@ -68,6 +70,8 @@ Parameters:
   - complete_payout_url: The API endpoint of the payer the recipient should send their response back to
   - login: string - A login username, email, etc
   - secret: string - A SHA256 hash of the user's passphrase
+
+---
 
 ### complete_payout
 This will be performed by the BitGrinPay client using the `complete_payout_url` specified in the `request_payout` response
