@@ -68,8 +68,6 @@ Parameters:
  Response:
   - `tx`: string - The content of a BitGrin send transaction file
   - `complete_payout_url`: The API endpoint of the payer the recipient should send their response back to
-  - `login`: string - A login username, email, etc
-  - `secret`: string - A SHA256 hash of the user's passphrase
 
 ---
 
