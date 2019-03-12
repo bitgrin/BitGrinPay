@@ -29,9 +29,9 @@ First, a payer produces a payout payload containing their payer information:
 
  ### payment_payload
 
-  - icon: A user friendly 128x128 icon representing the payer
-  - name: A user friendly name of the payer
-  - request_payout_url: An HTTPS endpoint the user can POST to, in order to begin orchestrating slate exchange
+  - `icon`: string - A user friendly 128x128 icon URL representing the payer
+  - `name`: string - A user friendly name of the payer
+  - `request_payout_url`: string - An HTTPS endpoint the user can POST to, in order to begin orchestrating slate exchange
 
  #### Example
  ```
@@ -66,10 +66,10 @@ Parameters:
  - `secret`: string - A SHA256 hash of the user's passphrase
  
  Response:
-  - tx: string - The content of a BitGrin send transaction file
-  - complete_payout_url: The API endpoint of the payer the recipient should send their response back to
-  - login: string - A login username, email, etc
-  - secret: string - A SHA256 hash of the user's passphrase
+  - `tx`: string - The content of a BitGrin send transaction file
+  - `complete_payout_url`: The API endpoint of the payer the recipient should send their response back to
+  - `login`: string - A login username, email, etc
+  - `secret`: string - A SHA256 hash of the user's passphrase
 
 ---
 
