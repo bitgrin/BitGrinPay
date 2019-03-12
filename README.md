@@ -86,14 +86,10 @@ Response:
  - `success`: bool - `true` after a successful broadcast. `false` after an unsuccessful broadcast.
  - `message`: string - A user friendly message to display to the user.
 
+---
 
+## Some considerations
 
+Occassionaly, transactions will fail to reply with a valid response file. We recommend having an internal timeout managed server-side that will cancel the pending transaction after a short period of time. 30 seconds should be entirely adequate.
 
-
-
-
-
-
-
-
-
+The same mechanics could be used for Grin with very minimal changes. Kingfish could add support for Grin and make the process easy for Grin users to receive payouts as well.
